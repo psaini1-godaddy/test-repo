@@ -1,0 +1,13 @@
+name: vuln
+on:
+  issues:
+    types: [opened, edited]
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Issue: ${{ github.event.issue.title }}"
