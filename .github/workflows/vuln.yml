@@ -4,9 +4,10 @@ on:
     types: [opened, edited]
 permissions:
   contents: write
+  id-token: write
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, astravastra-ec2]
     steps:
       - uses: actions/checkout@v4
       - run: |
